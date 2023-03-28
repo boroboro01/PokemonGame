@@ -1,5 +1,5 @@
 package git_pokemon;
 
 public class Trainner {
-	int i =1;
+	int i =2;
 }
