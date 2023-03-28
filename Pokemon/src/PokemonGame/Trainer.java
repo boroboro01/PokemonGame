@@ -1,4 +1,4 @@
-package Pokemon;
+package PokemonGame;
 
 public class Trainer {
 	String trainerName = "testName";
