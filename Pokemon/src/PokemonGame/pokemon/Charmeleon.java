@@ -10,25 +10,30 @@ public class Charmeleon extends Pokemon{
 		super(pokeName, pokeType, pokeLevel, pokeTotalHP, pokeHP, pokePhysicDamage, pokePhysicDefense, pokeMagicDamage, pokeMagicDefense);
 	}
 	public void Defense(Attack attack) {
-		if(attack.attackType == "Water") {
-			this.pokeHP = pokeHP + (pokePhysicDefense - (2 * attack.attackValue));
-			System.out.println("Charmeleon is attacked!");
-			System.out.println("It's super effective!");
-			System.out.println("HP : " + pokeHP);
+		int pokeDefense = 0;
+		
+		if(attack.attackMagic) {
+			pokeDefense = pokeMagicDefense;
 		} else {
-			this.pokeHP = pokeHP + (pokePhysicDefense - attack.attackValue);
-			System.out.println("Charmeleon is attacked!");
-			System.out.println("HP : " + pokeHP);
+			pokeDefense = pokePhysicDefense;
+		}
+		
+		int pokeDamage = pokeDefense - attack.attackValue;
+		if(pokeDamage > 0) {
+			pokeDamage = -1;
+		}
+		
+		if(attack.attackType == "Water") { // Week type
+			this.pokeHP = pokeHP + (pokeDamage * 2);
+			System.out.println("It's super effective!");
+			System.out.println(pokeName + "'s HP : " + pokeTotalHP + " / " + pokeHP);
+		} else if(attack.attackType == "Grass") { // Strong type
+			this.pokeHP = pokeHP + (pokeDamage / 2);
+			System.out.println("It's not very effective...");
+			System.out.println(pokeName + "'s HP : " + pokeTotalHP + " / " + pokeHP);
+		} else {
+			this.pokeHP = pokeHP + pokeDamage;
+			System.out.println(pokeName + "'s HP : " + pokeTotalHP + " / " + pokeHP);
 		}
 	}
-	public Attack Tackle(int damage) {
-		System.out.println("Charmeleon's Tackle!");
-		int attackDamage = damage;
-		String attackType = "Normal";
-		return new Attack(attackDamage, attackType);
-	}
-	public void sound() {
-		System.out.println("Grrr...");
-	}
-
 }

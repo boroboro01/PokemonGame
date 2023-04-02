@@ -3,13 +3,12 @@ package PokemonGame.pokemon;
 import PokemonGame.Attack;
 import PokemonGame.Pokemon;
 
-public class Charmander extends Pokemon {
-	
-	public Charmander(String pokeName, String pokeType, int pokeLevel, int pokeTotalHP, int pokeHP, int pokePhysicDamage, int pokePhysicDefense,
+public class Venusaur extends Pokemon{
+
+	public Venusaur(String pokeName, String pokeType, int pokeLevel, int pokeTotalHP, int pokeHP, int pokePhysicDamage, int pokePhysicDefense,
 			int pokeMagicDamage, int pokeMagicDefense) {
 		super(pokeName, pokeType, pokeLevel, pokeTotalHP, pokeHP, pokePhysicDamage, pokePhysicDefense, pokeMagicDamage, pokeMagicDefense);
 	}
-	
 	public void Defense(Attack attack) {
 		int pokeDefense = 0;
 		
@@ -24,11 +23,11 @@ public class Charmander extends Pokemon {
 			pokeDamage = -1;
 		}
 		
-		if(attack.attackType == "Water") { // Week type
+		if(attack.attackType == "Fire") { // Week type
 			this.pokeHP = pokeHP + (pokeDamage * 2);
 			System.out.println("It's super effective!");
 			System.out.println(pokeName + "'s HP : " + pokeTotalHP + " / " + pokeHP);
-		} else if(attack.attackType == "Grass") { // Strong type
+		} else if(attack.attackType == "Water") { // Strong type
 			this.pokeHP = pokeHP + (pokeDamage / 2);
 			System.out.println("It's not very effective...");
 			System.out.println(pokeName + "'s HP : " + pokeTotalHP + " / " + pokeHP);
@@ -37,4 +36,6 @@ public class Charmander extends Pokemon {
 			System.out.println(pokeName + "'s HP : " + pokeTotalHP + " / " + pokeHP);
 		}
 	}
+	
 }
+

@@ -9,19 +9,28 @@ public class Main {
 	public static void main(String[] args) {
 		System.out.println("Pokemon");
 		
-		Charmander Charmander = new Charmander("Charmander", "Fire", 5, 100, 100, 10, 5, 10, 5);
-		Squirtle Squirtle = new Squirtle("Squirtle", "Water", 5, 100, 100, 7, 8, 7, 8);
-		Rattata Rattata = new Rattata("Rattata", "Normal", 3, 30, 30, 2, 2, 2, 2);
+		Charmander Charmander = new Charmander("Charmander", "Fire", 5, 100, 100, 14, 5, 14, 5);
+		Squirtle Squirtle = new Squirtle("Squirtle", "Water", 5, 100, 100, 11, 8, 11, 8);
+		Rattata Rattata = new Rattata("Rattata", "Normal", 3, 30, 30, 6, 2, 6, 2);
 		
 		
 		Charmander.printPokeInfo();
 		Squirtle.printPokeInfo();
 		Rattata.printPokeInfo();
 		
-		Rattata.Defense(Squirtle.WaterGun(Squirtle.pokeMagicDamage)); //Squirtle Attack Rattata
-		Charmander.Defense(Squirtle.WaterGun(Squirtle.pokeMagicDamage)); //Squirtle Attack Charmander
+		Rattata.Defense(Squirtle.WaterGun()); //Squirtle Attack Rattata
+		
+		Charmander.Defense(Squirtle.WaterGun()); //Squirtle Attack Charmander
+		Squirtle.Defense(Charmander.Ember());
+		Charmander.Growl(Squirtle);
+		Squirtle.TailWhip(Charmander);
+		Squirtle.Withdraw();
+		
+		Charmander.printPokeInfo();
+		Squirtle.printPokeInfo();
 		
 		Charmander.Evolution(11, "Charmander");
+		
 		Charmander.printPokeInfo();
 		if(Charmander.pokeLevel >= 16) { // evolution Charmander to Charmeleon
 			Charmander = null;
