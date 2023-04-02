@@ -4,20 +4,29 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Trainer {
-	String trainerName = "testName";
-	int trainerLevel = 1;
-	int[] trainerExp = {0,1};
-	int trainerCandy = 0;
-	int trainerMonsteball = 0;
-	Pokemon[] pokemon = new pokemon[6];
+	String trainerName;
+	int trainerLevel;
+	int[] trainerExp;
+	int trainerCandy;
+	int trainerMonsteball;
+	Pokemon[] pokemon;
+	
+	public Trainer() {
+		this.trainerName = "testName";
+		this.trainerLevel = 1;
+		this.trainerExp = new {0,1};
+		this.trainerCandy = 0;
+		this.trainerMonsteball = 0;
+		this.pokemon = new pokemon[6];
+	}
 	
 	Scanner scan = new Scanner(System.in);
 	
 	
 	public void LevelUp() {
-		trainerLevel++;
-		trainerExp[1] = 0;
-		trainerExp[0] *= 2;
+		this.trainerLevel++;
+		this.trainerExp[1] = 0;
+		this.trainerExp[0] *= 2;
 	}
 	
 	public void feedingCandy() {
