@@ -23,6 +23,10 @@ public class Trainer {
 	Scanner scan = new Scanner(System.in);
 	
 	
+	public void setTrainerCandy(int trainerCandy) {
+		this.trainerCandy = trainerCandy;
+	}
+
 	public void LevelUp() {
 		this.trainerLevel++;
 		this.trainerExp[1] = 0;
@@ -40,9 +44,10 @@ public class Trainer {
 			this.pokemon[i].printPokeInfo(); // 0 : [포케몬 이름] 형식으로 출력
 		}
 	}
-	
+
 	public void feedingCandy() {
 		int feedPokemon;
+		int candy;
 		
 		if(this.trainerCandy<=0) {
 			System.out.println("you have no candy"); //사탕 없을 때
@@ -51,18 +56,21 @@ public class Trainer {
 		
 		System.out.println("Choose a Pokemon Number to feed candy");
 		for(int i=0;i<pokeNum;i++) {
-			System.out.print(i+" : [ "+this.pokemon[i].pokeName+" ] "); // 0 : [포케몬 이름] 형식으로 출력
+			System.out.println(i+" : [ "+this.pokemon[i].pokeName+" ] "); // 0 : [포케몬 이름] 형식으로 출력
 		}
-		System.out.println();
-		System.out.print(">>");
+		System.out.print(">> ");
 		feedPokemon = scan.nextInt();
+		
+		System.out.println("Choose the number of candy to feed");
+		System.out.print(">> ");
+		candy = scan.nextInt();
 		
 		if(this.pokemon[feedPokemon]==null || (feedPokemon>pokeNum) || (feedPokemon<0)) { //포케몬이 없거나 포케몬 번호가 0~5이 아닐때
 			System.out.println("dose not exist pokemon");
 			return;
 		}
 		
-		this.pokemon[feedPokemon].pokeLevel++;
+		this.pokemon[feedPokemon].LevelUp(candy);
 		this.trainerCandy--;
 	}
 	
@@ -83,8 +91,5 @@ public class Trainer {
 		}
 		
 		this.pokemon[releasePoke] = null;
-		
 	}
-	
-	
 }

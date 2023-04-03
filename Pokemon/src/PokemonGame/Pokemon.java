@@ -22,6 +22,7 @@ public class Pokemon implements NormalSkill, FireSkill, WaterSkill{
 	protected int pokePhysicDefense;
 	protected int pokeMagicDamage;
 	protected int pokeMagicDefense;
+	protected String[] skillList = new String[4];
 	
 	public Pokemon(String pokeName, String pokeType, int pokeLevel, int pokeTotalHP, int pokeHP, int pokePhysicDamage, int pokePhysicDefense,
 			int pokeMagicDamage, int pokeMagicDefense ) {
@@ -199,15 +200,16 @@ public class Pokemon implements NormalSkill, FireSkill, WaterSkill{
 	}
 	
 	
-	public void Evolution(int candy, String name) {
+	public void LevelUp(int candy) {
 		for(int i=0;i<candy;i++) { // Feed candy
 			pokeLevel++;
+			pokeTotalHP++;
 			pokeHP++;
 			pokePhysicDamage++;
 			pokePhysicDefense++;
 			pokeMagicDamage++;
 			pokeMagicDefense++;
-			System.out.println(name + "'s LevelUP");
 		}
+		System.out.println(pokeName + "has become Level " + pokeLevel + "!!");
 	}
 }

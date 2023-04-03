@@ -30,18 +30,11 @@ public class Main {
 		Charmander.printPokeInfo();
 		Squirtle.printPokeInfo();
 		
-		Charmander.Evolution(11, "Charmander");
-		
 		Charmander.printPokeInfo();
-		if(Charmander.pokeLevel >= 16) { // evolution Charmander to Charmeleon
-			Charmander = null;
-			Charmeleon Charmeleon = new Charmeleon("Charmeleon", "Fire", 16, 120, 120, 25, 20, 25, 20);
-			Charmeleon.printPokeInfo();
-		}
-
+		
+		trainer.setTrainerCandy(10);
 		trainer.catchPokemon(Squirtle);
 		trainer.myPokemon();
-
-		
+		trainer.feedingCandy();
 	}
 }

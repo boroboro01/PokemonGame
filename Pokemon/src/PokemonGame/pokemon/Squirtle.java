@@ -37,4 +37,5 @@ public class Squirtle extends Pokemon {
 			System.out.println(pokeName + "'s HP : " + pokeTotalHP + " / " + pokeHP);
 		}
 	}
+	
 }
