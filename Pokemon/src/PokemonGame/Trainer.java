@@ -14,17 +14,17 @@ public class Trainer {
 	public Trainer() {
 		this.trainerName = "testName";
 		this.trainerLevel = 1;
-		this.trainerExp = new {0,1};
+		this.trainerExp = {1,0};
 		this.trainerCandy = 0;
 		this.trainerMonsteball = 0;
-		this.pokemon = new pokemon[6];
+		this.pokemon = new Pokemon[6];
 	}
 	
 	Scanner scan = new Scanner(System.in);
 	
 	
 	public void LevelUp() {
-		this.trainerLevel++;
+		this.trainerLevel++;	
 		this.trainerExp[1] = 0;
 		this.trainerExp[0] *= 2;
 	}
@@ -53,7 +53,7 @@ public class Trainer {
 		this.trainerCandy--;
 	}
 	
-	public void releasePokemon{
+	public void releasePokemon(){
 		int pokeNum;
 		System.out.println("Choose a Pokemon Number to release");
 		for(int i=0;i<6;i++) {
