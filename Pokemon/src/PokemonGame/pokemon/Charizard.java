@@ -3,13 +3,12 @@ package PokemonGame.pokemon;
 import PokemonGame.Attack;
 import PokemonGame.Pokemon;
 
-public class Charmander extends Pokemon {
-	
-	public Charmander(String pokeName, String pokeType, int pokeLevel, int pokeTotalHP, int pokeHP, int pokePhysicDamage, int pokePhysicDefense,
+public class Charizard extends Pokemon{
+
+	public Charizard(String pokeName, String pokeType, int pokeLevel, int pokeTotalHP, int pokeHP, int pokePhysicDamage, int pokePhysicDefense,
 			int pokeMagicDamage, int pokeMagicDefense) {
 		super(pokeName, pokeType, pokeLevel, pokeTotalHP, pokeHP, pokePhysicDamage, pokePhysicDefense, pokeMagicDamage, pokeMagicDefense);
 	}
-	
 	public void Defense(Attack attack) {
 		int pokeDefense = 0;
 		

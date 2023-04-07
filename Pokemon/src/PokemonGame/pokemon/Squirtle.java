@@ -1,11 +1,9 @@
 package PokemonGame.pokemon;
 
 import PokemonGame.Attack;
-import PokemonGame.NormalSkill;
 import PokemonGame.Pokemon;
-import PokemonGame.WaterSkill;
 
-public class Squirtle extends Pokemon implements NormalSkill, WaterSkill{
+public class Squirtle extends Pokemon {
 	
 	public Squirtle(String pokeName, String pokeType, int pokeLevel, int pokeTotalHP, int pokeHP, int pokePhysicDamage, int pokePhysicDefense,
 			int pokeMagicDamage, int pokeMagicDefense) {
@@ -13,27 +11,30 @@ public class Squirtle extends Pokemon implements NormalSkill, WaterSkill{
 	}
 
 	public void Defense(Attack attack) {
-		if(attack.attackType == "Water") {
-			this.pokeHP = pokeHP + (pokePhysicDefense - (2 * attack.attackValue));
-			System.out.println("Squirtle is attacked!");
-			System.out.println("It's super effective!");
-			System.out.println("HP : " + pokeHP);
+		int pokeDefense = 0;
+		
+		if(attack.attackMagic) {
+			pokeDefense = pokeMagicDefense;
 		} else {
-			this.pokeHP = pokeHP + (pokePhysicDefense - attack.attackValue);
-			System.out.println("Squirtle is attacked!");
-			System.out.println("HP : " + pokeHP);
+			pokeDefense = pokePhysicDefense;
 		}
-	}
-	public Attack Tackle(int damage) {
-		System.out.println("Squirtle's Tackle!");
-		int attackDamage = damage;
-		String attackType = "Normal";
-		return new Attack(attackDamage, attackType);
-	}
-	public Attack WaterGun(int damage) {
-		System.out.println("Squirtle's WaterGun!");
-		int attackDamage = damage + 3;
-		String attackType = "Water";
-		return new Attack(attackDamage, attackType);
+		
+		int pokeDamage = pokeDefense - attack.attackValue;
+		if(pokeDamage > 0) {
+			pokeDamage = -1;
+		}
+		
+		if(attack.attackType == "Grass") { // Week type
+			this.pokeHP = pokeHP + (pokeDamage * 2);
+			System.out.println("It's super effective!");
+			System.out.println(pokeName + "'s HP : " + pokeTotalHP + " / " + pokeHP);
+		} else if(attack.attackType == "Fire") { // Strong type
+			this.pokeHP = pokeHP + (pokeDamage / 2);
+			System.out.println("It's not very effective...");
+			System.out.println(pokeName + "'s HP : " + pokeTotalHP + " / " + pokeHP);
+		} else {
+			this.pokeHP = pokeHP + pokeDamage;
+			System.out.println(pokeName + "'s HP : " + pokeTotalHP + " / " + pokeHP);
+		}
 	}
 }
