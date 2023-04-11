@@ -41,7 +41,12 @@ public class Trainer {
 	
 	public void myPokemon() {
 		for(int i=0;i<pokeNum;i++) {
-			this.pokemon[i].printPokeInfo(); // 0 : [포케몬 이름] 형식으로 출력
+			this.pokemon[i].printPokeInfo();
+		}
+	}
+	public void myPokemonList() {
+		for(int k=0;k<this.pokeNum;k++) {
+			System.out.print(k+" : [ "+ this.pokemon[k].pokeName+" ] "); // 0 : [포케몬 이름] 형식으로 출력
 		}
 	}
 
@@ -55,9 +60,7 @@ public class Trainer {
 		}
 		
 		System.out.println("Choose a Pokemon Number to feed candy");
-		for(int i=0;i<pokeNum;i++) {
-			System.out.println(i+" : [ "+this.pokemon[i].pokeName+" ] "); // 0 : [포케몬 이름] 형식으로 출력
-		}
+		myPokemonList();
 		System.out.print(">> ");
 		feedPokemon = scan.nextInt();
 		
@@ -77,9 +80,7 @@ public class Trainer {
 	public void releasePokemon(){
 		int releasePoke;
 		System.out.println("Choose a Pokemon Number to release");
-		for(int i=0;i<pokeNum;i++) {
-			System.out.print(i+" : [ "+this.pokemon[i].pokeName+" ] "); // 0 : [포케몬 이름] 형식으로 출력
-		}
+		myPokemonList();
 		
 		System.out.println();
 		System.out.print(">>");

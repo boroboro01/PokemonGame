@@ -37,4 +37,27 @@ public class Charmander extends Pokemon {
 			System.out.println(pokeName + "'s HP : " + pokeTotalHP + " / " + pokeHP);
 		}
 	}
+	
+	public void skillList() {
+		System.out.println("1) Tackle");
+		System.out.println("2) Ember");
+		System.out.println("3) Growl");
+		System.out.println("4) Growl");
+	}
+	public Attack useAttackSkill(int skill, Pokemon enemy) {
+		switch(skill) {
+		case 1: return Tackle();
+		case 2: return Ember();
+		}
+		return null;
+	}
+	public void useUtilSkill(int skill, Pokemon enemy) {
+		switch(skill) {
+		case 3: Growl(enemy);
+		break;
+		case 4: Growl(enemy);
+		break;
+		}
+		return;
+	}
 }

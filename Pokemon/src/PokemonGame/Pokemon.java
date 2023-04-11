@@ -212,4 +212,16 @@ public class Pokemon implements NormalSkill, FireSkill, WaterSkill{
 		}
 		System.out.println(pokeName + "has become Level " + pokeLevel + "!!");
 	}
+
+	public void skillList() {
+		System.out.println("print skill list");
+	}
+
+	public Attack useAttackSkill(int skill, Pokemon enemy) {
+		return Tackle();
+	}
+	public void useUtilSkill(int skill, Pokemon enemy) {
+		Growl(enemy);
+		return;
+	}
 }
