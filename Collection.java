@@ -2,6 +2,7 @@
 import java.util.Random;
 import java.util.Scanner;
 import java.util.random;
+import PokemonGame.Trainner;
 
 public class Collection {
 	private static Collection instance = new Collection;

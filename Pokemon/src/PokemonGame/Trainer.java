@@ -10,7 +10,7 @@ public class Trainer {
 	int trainerMonsterball;
 	int drug;
 	int pokeNum;
-	Pokemon[] pokemon;
+	Pokemon[6] pokemon;
 	Pokemon battle_P;
 	
 	
@@ -20,7 +20,6 @@ public class Trainer {
 		this.trainerCandy = 0;
 		this.trainerMonsterball = 0;
 		this.pokeNum = 0;
-		this.pokemon = new Pokemon[6];
 	}
 	
 	Scanner scan = new Scanner(System.in);

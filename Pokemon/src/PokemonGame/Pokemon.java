@@ -22,6 +22,11 @@ public class Pokemon implements NormalSkill, FireSkill, WaterSkill{
 	protected int pokePhysicDefense;
 	protected int pokeMagicDamage;
 	protected int pokeMagicDefense;
+	protected int det_code;
+	
+	public int getDetCode() {
+		return this.det_code;
+	}
 	
 	public Pokemon(String pokeName, String pokeType, int pokeLevel, int pokeTotalHP, int pokeHP, int pokePhysicDamage, int pokePhysicDefense,
 			int pokeMagicDamage, int pokeMagicDefense ) {
