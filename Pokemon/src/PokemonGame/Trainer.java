@@ -1,9 +1,5 @@
 package PokemonGame;
 
-
-import java.util.ArrayList;
-=======
->>>>>>> refs/remotes/origin2/step2
 import java.util.Scanner;
 
 public class Trainer {
@@ -11,16 +7,18 @@ public class Trainer {
 	int trainerLevel;
 	int[] trainerExp = {1, 0};
 	int trainerCandy;
-	int trainerMonsteball;
+	int trainerMonsterball;
+	int drug;
 	int pokeNum;
 	Pokemon[] pokemon;
+	Pokemon battle_P;
 	
 	
 	public Trainer() {
 		this.trainerName = "testName";
 		this.trainerLevel = 1;
 		this.trainerCandy = 0;
-		this.trainerMonsteball = 0;
+		this.trainerMonsterball = 0;
 		this.pokeNum = 0;
 		this.pokemon = new Pokemon[6];
 	}
@@ -40,11 +38,19 @@ public class Trainer {
 		this.pokeNum = pokeNum + 1;
 	}
 	
-	public void myPokemon() {
+	
+	public void showMyPokemon() {
 		for(int i=0;i<pokeNum;i++) {
 			this.pokemon[i].printPokeInfo(); // 0 : [포케몬 이름] 형식으로 출력
 		}
 	}
+	
+	
+	public void showMyBag{
+		System.out.println("===========================================");
+		System.out.println("0 [monster Ball] : "+this.trainerMonsterball + "1 [drug] : "+ this.drug + "2 [candy] : "+ this.trainerCandy);
+	}
+	
 	
 	public void feedingCandy() {
 		int feedPokemon;
