@@ -90,12 +90,12 @@ public class Pokemon implements NormalSkill, FireSkill, WaterSkill{
 	public void TailWhip(Pokemon pokemon) {
 		System.out.println(pokeName + "'s Tail Whip!");
 		System.out.println(pokemon.pokeName + "'s Physical Defense have rankdown!");
-		pokemon.pokePhysicDefense = (int) (pokemon.pokePhysicDefense - pokemon.pokePhysicDefense * 0.3);
+		pokemon.pokePhysicDefense = (int) (pokemon.pokePhysicDefense - pokemon.pokePhysicDefense * 0.2);
 	};
 	public void Growl(Pokemon pokemon) {
 		System.out.println(pokeName + "'s Growl!");
 		System.out.println(pokemon.pokeName + "'s Physical Damage have rankdown!");
-		pokemon.pokePhysicDamage = (int) (pokemon.pokePhysicDamage - pokemon.pokePhysicDamage * 0.3);
+		pokemon.pokePhysicDamage = (int) (pokemon.pokePhysicDamage - pokemon.pokePhysicDamage * 0.2);
 	};
 	public Attack Slash() {
 		System.out.println(pokeName + "'s Slash!");
@@ -182,7 +182,7 @@ public class Pokemon implements NormalSkill, FireSkill, WaterSkill{
 	public void Withdraw() {
 		System.out.println(FONT_BLUE + pokeName + "'s Withdraw!" + RESET);
 		System.out.println(FONT_BLUE + pokeName + "'s Physical Defense have rankup!" + RESET);
-		pokePhysicDefense = (int) (pokePhysicDefense + pokePhysicDefense * 0.3);
+		pokePhysicDefense = (int) (pokePhysicDefense + pokePhysicDefense * 0.2);
 	}
 	public Attack WaterPulse() {
 		System.out.println(FONT_BLUE + pokeName + "'s Water Pulse!" + RESET);

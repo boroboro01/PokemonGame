@@ -46,7 +46,7 @@ public class Trainer {
 	}
 	public void myPokemonList() {
 		for(int k=0;k<this.pokeNum;k++) {
-			System.out.print(k+" : [ "+ this.pokemon[k].pokeName+" ] "); // 0 : [포케몬 이름] 형식으로 출력
+			System.out.println(" [ "+ k + " ] "+ " : " + this.pokemon[k].pokeName); // 0 : [포케몬 이름] 형식으로 출력
 		}
 	}
 
