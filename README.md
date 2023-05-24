@@ -11,12 +11,12 @@ Java Team Project
 4. Rattata 꼬랫
 
 
-사막 101~200
-101. Charmander 파이리
-102. Charmeleon 리자드
-103. Charizard 리자몽
+사막 101~200<br/>
+101. Charmander 파이리<br/>
+103. Charmeleon 리자드<br/>
+104. Charizard 리자몽<br/>
 
-바다 201~300
-201. Squirtle 꼬부기
-202. Wartortle 어니부기
-203. Blastoise 거북왕
+바다 201~300<br/>
+201. Squirtle 꼬부기<br/>
+202. Wartortle 어니부기<br/>
+203. Blastoise 거북왕<br/>
